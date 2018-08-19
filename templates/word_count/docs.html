@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block docs_menu %}active{% endblock %}
+
+{% block content %}
+    <h3>How to use the API</h3>
+
+    <hr>
+
+    <p>
+        Just supply the API endpoint with <code>url</code> and <code>word</code> parameters.<br />
+    </p>
+
+    <p>
+        <code>url</code> should be a full URL, like <code>http://virtusize.jp</code>.
+    </p>
+
+    <p>
+        <code>word</code> parameter can be anything. It can contain a alphabets and numbers.
+    </p>
+
+    <p>Your query should look like this.</p>
+
+    <p>
+        <code>https://{{ request.get_host }}/wordcount?url=http://virtusize.jp&word=fit</code>
+    </p>
+    
+
+    <a href="{% url 'wordcount:api' %}?url=http://virtusize.jp&word=fit" class="btn btn-secondary" target="_blank">Try it!</a>
+{% endblock %}
